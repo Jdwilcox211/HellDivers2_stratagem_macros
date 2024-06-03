@@ -1,6 +1,6 @@
 # HellDivers2_stratagem_macros
 Must have python installed https://www.python.org/
-was created with 3.11.4, will likely work on later installations.
+was created with 3.11.4, and successfully tested on 3.12.3
 
 Install requirements.txt
 Syntax to install requirements: pip install -r *path*/requirements.txt

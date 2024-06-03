@@ -68,7 +68,7 @@ stratagems=[
 
 for stratagem in stratagems:
     batbody=f'''::@echo off
-    C:\\Users\jdwil\\anaconda3\\envs\\py3.11.4\\python.exe "C:\\Python projects\\Git Dev\\Games\\helldivers_2_macros\\stratagem_macro.py" {stratagem} %*
+    "C:\\Users\jdwil\\anaconda3\\envs\\py3.11.4\\python.exe" "C:\\Python projects\\Git Dev\\Games\\helldivers_2_macros\\stratagem_macro.py" {stratagem} %*
     ::pause'''
     file= open(f'bats\\{stratagem}.bat','w')
     #bat body

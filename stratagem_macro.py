@@ -1,11 +1,10 @@
-
 import time
 from datetime import datetime
 import sys
+import re
 import win32con
 import win32api
 import win32gui
-import re
 from icecream import ic
 
 
@@ -23,6 +22,7 @@ ic(inputArgs[1])
 
 #timestamp for script run
 ic(f'Input arguments {inputArgs}')
+
 
 #bring window forward
 class WindowMgr:
@@ -52,6 +52,7 @@ class WindowMgr:
 w = WindowMgr()
 w.find_window_wildcard(".*HELLDIVER.*")
 w.set_foreground()
+
 
 #VirtualKey Code
 STRATKEY = 0x23 #end key. alt = 0x12. Left alt = 0xA4.

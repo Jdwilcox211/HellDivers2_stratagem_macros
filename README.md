@@ -2,9 +2,14 @@
 Must have python installed https://www.python.org/
 was created with 3.11.4, will likely work on later installations.
 
-Syntax is: python *path*\stratagem_macro.py *Stratagem Name*
+Install requirements.txt
+Syntax to install requirements: pip install -r *path*/requirements.txt
+
+to run script
+Syntax is: *path*\python *path*\stratagem_macro.py *Stratagem Name*
 
 These are intended to be used as separate bats and linked to a hotkey or stream deck.  I use a free app that turns my phone and/or tablet into a stream deck.  Touch Portal, pro version very affordable also. https://www.touch-portal.com/
+I also noticed that touch portal hides the bat terminal from appearing.
 
 I have included a script to create the bat files for you. bat_creator.py
 You will need to change the paths to your python executable and the directory that you have this script set up in the run bat_creator.py

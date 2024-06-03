@@ -1,7 +1,5 @@
 # HellDivers2_stratagem_macros
 
-It was a lil tricky to figure out how to get HellDivers 2 to recognize the keystrokes.
-
 Syntax is: python <path>stratagem_macro.py <Stratagem Name>
 
 These are intended to be used as separate bats and linked to a hotkey or stream deck.  I use a free app that turns my phone and/or tablet into a stream deck.  Touch Portal, pro version very affordable also. https://www.touch-portal.com/

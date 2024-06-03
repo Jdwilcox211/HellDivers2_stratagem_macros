@@ -6,7 +6,6 @@ import win32con
 import win32api
 import win32gui
 import re
-import sys
 from icecream import ic
 
 
@@ -27,27 +26,27 @@ ic(f'Input arguments {inputArgs}')
 
 #bring window forward
 class WindowMgr:
-   #"""Encapsulates some calls to the winapi for window management"""
-   def __init__ (self):
-      #"""Constructor"""
-      self._handle = None
+    #"""Encapsulates some calls to the winapi for window management"""
+    def __init__ (self):
+        #"""Constructor"""
+        self._handle = None
 
-   def find_window(self, class_name, window_name = None):
-      #"""find a window by its class_name"""
-      self._handle = win32gui.FindWindow(class_name, window_name)
+    def find_window(self, class_name, window_name = None):
+        #"""find a window by its class_name"""
+        self._handle = win32gui.FindWindow(class_name, window_name)
 
-   def _window_enum_callback(self, hwnd, wildcard):
-      #'''Pass to win32gui.EnumWindows() to check all the opened windows'''
-      if re.match(wildcard, str(win32gui.GetWindowText(hwnd))) != None:
-         self._handle = hwnd
+    def _window_enum_callback(self, hwnd, wildcard):
+        #'''Pass to win32gui.EnumWindows() to check all the opened windows'''
+        if re.match(wildcard, str(win32gui.GetWindowText(hwnd))) != None:
+            self._handle = hwnd
 
-   def find_window_wildcard(self, wildcard):
-      self._handle = None
-      win32gui.EnumWindows(self._window_enum_callback, wildcard)
+    def find_window_wildcard(self, wildcard):
+        self._handle = None
+        win32gui.EnumWindows(self._window_enum_callback, wildcard)
 
-   def set_foreground(self):
-      #"""put the window in the foreground"""
-      win32gui.SetForegroundWindow(self._handle)
+    def set_foreground(self):
+        #"""put the window in the foreground"""
+        win32gui.SetForegroundWindow(self._handle)
 
 
 w = WindowMgr()
@@ -132,23 +131,23 @@ STRATAGEMS = {
 
 
 def pushkey(keytopush):
-   win32api.keybd_event(keytopush,0,0,0) # holds the key down
-   time.sleep(0.03) # waits 1 second
-   win32api.keybd_event(keytopush,0,win32con.KEYEVENTF_KEYUP,0) # releases the key
-   time.sleep(0.03)
+    win32api.keybd_event(keytopush,0,0,0) # holds the key down
+    time.sleep(0.03) # waits 1 second
+    win32api.keybd_event(keytopush,0,win32con.KEYEVENTF_KEYUP,0) # releases the key
+    time.sleep(0.03)
 
 
 try:
-   # pull stratagem keys from dictionary
-   strat=STRATAGEMS.get(inputArgs[1])
-   ic(f'Stratagem - {inputArgs[1]} : {strat}')
-   pushkey(STRATKEY)
-   for arrowkey in strat:
-      pushkey(arrowkey)
+    # pull stratagem keys from dictionary
+    strat=STRATAGEMS.get(inputArgs[1])
+    ic(f'Stratagem - {inputArgs[1]} : {strat}')
+    pushkey(STRATKEY)
+    for arrowkey in strat:
+        pushkey(arrowkey)
 
 except Exception as e:
-   ic(f'{e}')
-   sys.exit()
+    ic(f'{e}')
+    sys.exit()
 
 
 timestamp=datetime.now()

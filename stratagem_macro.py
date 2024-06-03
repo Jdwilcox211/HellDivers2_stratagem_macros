@@ -54,7 +54,7 @@ w.find_window_wildcard(".*HELLDIVER.*")
 w.set_foreground()
 
 
-#VirtualKey Code
+#VirtualKey Code:
 STRATKEY = 0x23 #end key. alt = 0x12. ctrl = 0x11.
 Up = 0x26 #up arrow. w = 0x57
 Down = 0x28 #down arrow. s = 0x53

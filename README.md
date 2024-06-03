@@ -1,6 +1,6 @@
 # HellDivers2_stratagem_macros
 
-Syntax is: python <path>stratagem_macro.py <Stratagem Name>
+Syntax is: python *path*stratagem_macro.py *Stratagem Name*
 
 These are intended to be used as separate bats and linked to a hotkey or stream deck.  I use a free app that turns my phone and/or tablet into a stream deck.  Touch Portal, pro version very affordable also. https://www.touch-portal.com/
 
